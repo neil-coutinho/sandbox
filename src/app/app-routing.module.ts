@@ -6,7 +6,8 @@ import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: 'q', component: QComponent },
-  { path: 'test', component: TestComponent }
+  { path: 'test', component: TestComponent },
+  { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

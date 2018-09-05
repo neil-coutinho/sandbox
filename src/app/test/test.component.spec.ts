@@ -43,4 +43,12 @@ describe('TestComponent', () => {
     comp.ngOnInit()
     expect(comp.message).toContain('neil');
   });
+
+
+  it('should call service get method on init (via spy)', () => {
+    const spy = spyOn(collab, 'get');
+    comp.ngOnInit();
+    expect(spy).toHaveBeenCalled();
+    //expect(comp.message).toContain('neil'); // it is a spy so the get function body is empty
+  });
 });
